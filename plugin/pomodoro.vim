@@ -40,7 +40,7 @@ function! PomodoroStatus()
 endfunction
 
 function! s:PomodoroStart(name)
-	if g:pomodoro_started != 1
+	if g:pomodoro_started != 1 || g:pomodoro_force_start == 1
 		if a:name == ''
 			let name = '(unnamed)'
 		else 
