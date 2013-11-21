@@ -25,6 +25,10 @@ function! pomodorohandlers#pause(name)
 endfunction
 
 function! pomodorohandlers#restart()
+    if g:pomodoro_started == 1
+      return
+    endif
+
     " Load the result in a split
     let env = {}
     function env.get(temp_file_name) dict
